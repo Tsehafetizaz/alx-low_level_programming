@@ -1,3 +1,3 @@
 #include <stdio.h>
-int main(void) { return printf("Programming is like building a multilingual puzzle\n"), 0; }
+int main(void) { return puts("Programming is like building a multilingual puzzle,") != EOF ? 0 : 1; }
 
