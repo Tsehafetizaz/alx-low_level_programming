@@ -1,2 +1,2 @@
 #!/bin/bash
-cpp -P "$CFILE" | tee c >/dev/null
+gcc -E $CFILE -o c
