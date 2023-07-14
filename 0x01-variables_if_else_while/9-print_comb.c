@@ -4,7 +4,7 @@
  * main - Entry point of the program
  *
  * This program prints all possible combinations of single-digit numbers,
- * separated by a comma and a space. The numbers are printed in ascending order.
+ * by a comma and a space. The numbers are printed in ascending order.
  *
  * Return: Always 0 (Success)
  */
