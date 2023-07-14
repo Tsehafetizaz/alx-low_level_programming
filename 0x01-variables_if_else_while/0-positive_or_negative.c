@@ -23,6 +23,6 @@ printf("is zero\n");
 else
 printf("is negative\n");
 
-return 0;}
-
+return (0);
+}
 
