@@ -3,8 +3,8 @@
 /**
  * main - Entry point of the program
  *
- * This program prints the lowercase alphabet, followed by the uppercase alphabet,
- * all in a single line and separated by a space, and then followed by a new line.
+ * Tbet, followed by the uppercase alphabet,
+ * a separated by a space, and then followed by a new line.
  *
  * Return: Always 0 (Success)
  */
