@@ -1,9 +1,8 @@
 #include "main.h"
 
-/* 
-*print alphabet - prints the alphabet in lowercase.
+/**
+* print_alphabet - Prints the alphabet in lowercase.
 */
-
 void print_alphabet(void)
 {
 char letter;
@@ -14,10 +13,9 @@ _putchar(letter);
 _putchar('\n');
 }
 
-/*
-*print alphabet - prints the alphabet in 10X lowercase.
+/**
+* print_alphabet_x10 - Prints the alphabet in lowercase 10 times.
 */
-
 void print_alphabet_x10(void)
 {
 int i;
@@ -30,4 +28,5 @@ print_alphabet();
 int main(void)
 {
 print_alphabet_x10();
+return (0);
 }
