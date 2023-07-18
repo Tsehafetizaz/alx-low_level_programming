@@ -18,7 +18,7 @@ _putchar('\n');
 *print alphabet - prints the alphabet in 10X lowercase.
 */
 
-void print_alphabet_10x(void)
+void print_alphabet_x10(void)
 {
 int i;
 for (i = 0; i < 10; i++)
@@ -29,5 +29,5 @@ print_alphabet();
 
 int main(void)
 {
-print_alphabet_10x();
+print_alphabet_x10();
 }
