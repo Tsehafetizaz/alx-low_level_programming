@@ -15,6 +15,5 @@ return (-n);
 }
 else
 {
-return n;
-}
+return (n);
 }
