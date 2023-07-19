@@ -7,9 +7,11 @@ carrie@ubuntu:/debugging$ cat main.c
 */
 
 int main(void)
+int main(void)
 {
-int i=0;
+int i;
 
+i = 0;  // Changed this line from i = 98; to i = 0;
 positive_or_negative(i);
 
 return (0);
