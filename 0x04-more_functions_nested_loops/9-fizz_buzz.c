@@ -1,3 +1,8 @@
+/**
+* main - Entry point
+* Description: Program to complete the FizzBuzz test
+* Return: Always 0 (Success)
+*/
 #include <stdio.h>
 
 int main(void)
@@ -13,10 +18,10 @@ else if (i % 5 == 0)
 printf("Buzz");
 else
 printf("%d", i);
-
 if (i != 100)
 printf(" ");
 }
 printf("\n");
 return (0);
 }
+
