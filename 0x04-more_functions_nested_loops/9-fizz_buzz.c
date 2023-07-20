@@ -1,5 +1,12 @@
+/**
+* main - FizzBuzz program
+* This program prints the numbers from 1 to 100, but for multiples
+* of three, it prints "Fizz" instead of the number, and for multiples
+* of five, it prints "Buzz". For numbers which are multiples of both
+* three and five, it prints "FizzBuzz".
+* Return: 0 if the program completes successfully.
+*/
 #include <stdio.h>
-
 int main(void)
 {
 int i;
@@ -29,3 +36,4 @@ printf(" ");
 printf("\n");
 return 0;
 }
+i
