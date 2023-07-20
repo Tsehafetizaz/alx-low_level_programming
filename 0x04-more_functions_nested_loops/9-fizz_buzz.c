@@ -1,7 +1,8 @@
+include <stdio.h>
+
 /**
-* main - FizzBuzz program
+* fizz number
 */
-#include <stdio.h>
 
 int main(void)
 {
