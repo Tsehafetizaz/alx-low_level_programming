@@ -1,9 +1,5 @@
 include <stdio.h>
 
-/**
-* fizz number
-*/
-
 int main(void)
 {
 int i;
