@@ -16,5 +16,5 @@ length++;
 s++;
 }
 
-return length;
+return (length);
 }
