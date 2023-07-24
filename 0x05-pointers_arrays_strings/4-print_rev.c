@@ -8,20 +8,22 @@
  */
 void print_rev(char *s)
 {
-int length = 0;
+int i;
 
-
+// find the length of the string
 while (s[length] != '\0')
 {
-length++;
+    length++;
 }
 
-
-for (int i = length - 1; i >= 0; i--)
+// print the string in reverse
+for (i = length - 1; i >= 0; i--)
 {
-_putchar(s[i]);
+    _putchar(s[i]);
 }
 
-
+// print a newline
 _putchar('\n');
+
 }
+
