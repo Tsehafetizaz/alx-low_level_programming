@@ -1,5 +1,7 @@
 #include <limits.h>
-
+/*
+*_atoi describes a string to an integer.
+*/ 
 int _atoi(char *s)
 {
 int result = 0;
