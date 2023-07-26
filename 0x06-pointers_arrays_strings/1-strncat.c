@@ -8,12 +8,12 @@
 
 
 
-char *_strcat(char *dest, char *src);
+char *_strncat(char *dest, char *src, int n);
 {
 
 char *dest[20] = "Hello";
 char *src[20] = "World";
-*_strcat(*dest, *src);
+*_strncat(*dest, *src, 10);
 printf("%s\n", *dest);
 
 return (*dest);
