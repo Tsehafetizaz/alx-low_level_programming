@@ -5,7 +5,7 @@
  * @dest: the destination string
  * @src: the source string
  * @n: the maximum number of bytes to use from src
- * 
+ *
  * Return: a pointer to the resulting string dest
  */
 char *_strncat(char *dest, char *src, int n)
