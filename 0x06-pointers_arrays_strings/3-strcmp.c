@@ -1,36 +1,19 @@
-# include "main.h"
-
-/* 
-* _strcmp compares two strings.
-*dest *s1 are two strings
-*return value
-*/
-
-
-
+#include "main.h"
+/**
+ * _strcmp - a function that compares two strings
+ * @s1: first string to compare
+ * @s2: second string to compare
+ *
+ * Return: negative int if s1 < s2, 0 if s1 and s2 are equal, positive int if s1 > s2
+ */
 int _strcmp(char *s1, char *s2)
 {
-
-char *s1[15] = "Hello";
-char *s2[15] = "World";
-int result = _strcmp(*s1, *s2);
+while(*s1)
 {
-
-if(result > 0) 
-{
-printf("*s1 is greater than *s2");
-} 
-else if(result < 0) 
-{
-printf("*s2 is greater than *s1");
-} 
-else 
-{
-printf("*s1 is equal to *s2");
+if (*s1 != *s2)
+break;
+s1++;
+s2++;
 }
-
-
-
-return (*dest);
-
+return *(unsigned char *)s1 - *(unsigned char *)s2;
 }
