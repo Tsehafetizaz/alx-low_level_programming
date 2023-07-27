@@ -11,5 +11,10 @@ void reverse_array(int *a, int n);
 char *string_toupper(char *);
 char *cap_string(char *);
 char *leet(char *);
+int is_alpha(char c);
+int to_upper(char c);
+int is_separator(char c);
+char *cap_string(char *str);
+
 
 #endif /* MAIN_H */
