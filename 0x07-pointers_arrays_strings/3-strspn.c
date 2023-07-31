@@ -19,9 +19,7 @@ if (s[i] == accept[j])
 {
 break;
 }
-}
-
-       
+}      
 if (!accept[j])
 {
 return (i);
