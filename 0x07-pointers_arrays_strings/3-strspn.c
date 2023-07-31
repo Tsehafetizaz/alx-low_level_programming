@@ -3,8 +3,7 @@
 /**
 * _strspn - gets the length of a prefix substring
 * @s: string to be scanned
-* @accept: string containing the list of characters to match in s
-* 
+* @accept: string containing the list of c
 * Return: the number of bytes in the initial segment of s 
 * which consist only of bytes from accept
 */
@@ -22,8 +21,8 @@ break;
 }
 if (accept[j] == '\0')
 {
-return i;
+return (i);
 }
 }
-return i;
+return (i);
 }
