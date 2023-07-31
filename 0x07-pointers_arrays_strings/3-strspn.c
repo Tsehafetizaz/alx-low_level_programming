@@ -20,8 +20,6 @@ if (s[i] == accept[j])
 break;
 }
 
-/* If we've gone through all of accept and found no match,
-* return the number of matches from the start of the string */
 if (!accept[j])
 return (i);
 }
