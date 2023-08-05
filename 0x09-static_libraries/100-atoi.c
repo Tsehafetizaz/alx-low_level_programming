@@ -1,10 +1,10 @@
 #include <limits.h>
+
 /**
-* This function converts a string to an integer, accounting for any + or - signs before the number.
+* _atoi-converts a string into integer.
 * If there are no numbers in the string, the function returns 0.
-* 
-* @param s The string to convert.
-* @return The converted integer.
+* @s: the string to use
+* Return: integer.
 */
 
 int _atoi(char *s)
@@ -24,6 +24,7 @@ sign = sign * 1;
 }
 i++;
 }
+
 while (s[i] != '\0' && s[i] >= '0' && s[i] <= '9')
 {
 if (result > INT_MAX / 10 ||
