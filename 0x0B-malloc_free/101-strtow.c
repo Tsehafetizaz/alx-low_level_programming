@@ -23,7 +23,11 @@ i++;
 }
 return (count);
 }
-
+/**
+* strtow - Splits a string into words.
+* @str: the string to split
+* Return: pointer to an array of strings
+*/
 char **strtow(char *str)
 {
 char **words;
@@ -64,3 +68,4 @@ i++;
 words[word_count] = NULL;
 return (words);
 }
+
