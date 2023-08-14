@@ -1,49 +1,52 @@
 #include "dog.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
-* new_dog - creates a new dog
+* new_dog - creates a new dog structure
 * @name: name of the dog
 * @age: age of the dog
 * @owner: owner of the dog
-* Return: pointer to the new dog
+* Return: pointer to the new dog, or NULL if fails
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-dog_t *dog;
-char *copy_name, *copy_owner;
-int len1, len2;
+dog_t *newDog;
+char *newName, *newOwner;
+int lenName, lenOwner, i;
 
-dog = malloc(sizeof(dog_t));
-if (!dog)
+newDog = malloc(sizeof(dog_t));
+if (!newDog)
 return (NULL);
 
-len1 = _strlen(name);
-copy_name = malloc(len1 + 1);
-if (!copy_name)
+lenName = strlen(name);
+lenOwner = strlen(owner);
+
+newName = malloc(lenName + 1);
+if (!newName)
 {
-free(dog);
+free(newDog);
 return (NULL);
 }
-for (int i = 0; i < len1; i++)
-copy_name[i] = name[i];
-copy_name[len1] = '\0';
 
-len2 = _strlen(owner);
-copy_owner = malloc(len2 + 1);
-if (!copy_owner)
+newOwner = malloc(lenOwner + 1);
+if (!newOwner)
 {
-free(copy_name);
-free(dog);
+free(newName);
+free(newDog);
 return (NULL);
 }
-for (int i = 0; i < len2; i++)
-copy_owner[i] = owner[i];
-copy_owner[len2] = '\0';
 
-dog->name = copy_name;
-dog->age = age;
-dog->owner = copy_owner;
+for (i = 0; i <= lenName; i++)
+newName[i] = name[i];
+for (i = 0; i <= lenOwner; i++)
+newOwner[i] = owner[i];
 
-return (dog);
+newDog->name = newName;
+newDog->age = age;
+newDog->owner = newOwner;
+
+return (newDog);
 }
+
