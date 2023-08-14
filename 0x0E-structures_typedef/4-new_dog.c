@@ -1,50 +1,52 @@
 #include "dog.h"
 #include <stdlib.h>
-#include <string.h>
-
 /**
 * new_dog - creates a new dog
 * @name: name of the dog
 * @age: age of the dog
 * @owner: owner of the dog
-* Return: pointer to the new dog
+* Return: pointer to the new dog, or NULL if fails
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-dog_t *dog;
-char *copy_name, *copy_owner;
-dog = malloc(sizeof(dog_t));
-if (!dog)
+dog_t *newdog;
+char *name_copy, *owner_copy;
+newdog = malloc(sizeof(dog_t));
+if (!newdog)
 return (NULL);
-
 if (name)
 {
-copy_name = strdup(name);
-if (!copy_name)
+for (name_copy = name; *name_copy; name_copy++)
+;
+name_copy = malloc(name_copy - name + 1);
+if (!name_copy)
 {
-free(dog);
+free(newdog);
 return (NULL);
 }
+for (name_copy = name; *name_copy; name_copy++, name++)
+*name_copy = *name;
 }
 else
-copy_name = NULL;
-
+name_copy = NULL;
 if (owner)
 {
-copy_owner = strdup(owner);
-if (!copy_owner)
+for (owner_copy = owner; *owner_copy; owner_copy++)
+;
+owner_copy = malloc(owner_copy - owner + 1);
+if (!owner_copy)
 {
-free(copy_name);
-free(dog);
+free(name_copy);
+free(newdog);
 return (NULL);
 }
+for (owner_copy = owner; *owner_copy; owner_copy++, owner++)
+*owner_copy = *owner;
 }
 else
-copy_owner = NULL;
-
-dog->name = copy_name;
-dog->age = age;
-dog->owner = copy_owner;
-
-return (dog);
+owner_copy = NULL;
+newdog->name = name_copy;
+newdog->age = age;
+newdog->owner = owner_copy;
+return (newdog);
 }
