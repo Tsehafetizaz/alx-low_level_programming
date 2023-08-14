@@ -18,30 +18,20 @@ dog = malloc(sizeof(dog_t));
 if (!dog)
 return (NULL);
 
-if (name)
-{
-copy_name = strdup(name);
-if (!copy_name)
+copy_name = name ? strdup(name) : NULL;
+if (name && !copy_name)
 {
 free(dog);
 return (NULL);
 }
-}
-else
-copy_name = NULL;
 
-if (owner)
-{
-copy_owner = strdup(owner);
-if (!copy_owner)
+copy_owner = owner ? strdup(owner) : NULL;
+if (owner && !copy_owner)
 {
 free(copy_name);
 free(dog);
 return (NULL);
 }
-}
-else
-copy_owner = NULL;
 
 dog->name = copy_name;
 dog->age = age;
@@ -49,4 +39,3 @@ dog->owner = copy_owner;
 
 return (dog);
 }
-
