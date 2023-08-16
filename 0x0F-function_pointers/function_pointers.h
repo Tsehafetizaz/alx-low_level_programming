@@ -1,8 +1,14 @@
-#ifndef MAIN_Hi
-#define MAIN_H
+#ifndef FUNCTION_POINTERS_H
+#define FUNCTION_POINTERS_H
 
-#include <stdio.h>
-#include <unistd.h>
+#include <stddef.h>
+
+/**
+* print_name - prints a name using a callback function
+* @name: name to print
+* @f: callback function to use to print the name
+* Return: Nothing.
+*/
 
 void print_name(char *name, void (*f)(char *));
 void array_iterator(int *array, size_t size, void (*action)(int));
