@@ -4,7 +4,7 @@
 #include <stddef.h>
 
 /**
-* print_name - prints a name using a callback function
+* print_name: prints a name using a callback function
 * @name: name to print
 * @f: callback function to use to print the name
 * Return: Nothing.
