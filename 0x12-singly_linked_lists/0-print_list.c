@@ -1,29 +1,25 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <string.h>
+#include <stdio.h>
 
 /**
-* create_node - creates a new node for a list_t linked list.
-* @str: string to put in the new node.
-* Return: pointer to the new node, or NULL if failed.
+* print_list - Prints all the elements of a list_t list.
+* @list: pointer to the start of the linked list.
+* Return: the number of nodes in the list.
 */
-list_t *create_node(const char *str)
+size_t print_list(const list_t *list)
 {
-list_t *new_node;
-unsigned int len = strlen(str);
+size_t nodes = 0;
 
-new_node = malloc(sizeof(list_t));
-if (!new_node)
-return (NULL);
-
-new_node->str = strdup(str);
-if (!(new_node->str))
+while (list != NULL)
 {
-free(new_node);
-return (NULL);
-}
-new_node->len = len;
-new_node->next = NULL;
+if (list->str == NULL)
+printf("[0] (nil)\n");
+else
+printf("[%u] %s\n", list->len, list->str);
 
-return (new_node);
+list = list->next;
+nodes++;
 }
+return(nodes);
+}
+
