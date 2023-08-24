@@ -20,6 +20,6 @@ printf("[%u] %s\n", list->len, list->str);
 list = list->next;
 nodes++;
 }
-return(nodes);
+return (nodes);
 }
 
