@@ -14,16 +14,16 @@ unsigned int len = strlen(str);
 
 new_node = malloc(sizeof(list_t));
 if (!new_node)
-return(NULL);
+return (NULL);
 
 new_node->str = strdup(str);
 if (!(new_node->str))
 {
 free(new_node);
-return(NULL);
+return (NULL);
 }
 new_node->len = len;
 new_node->next = NULL;
 
-return(new_node);
+return (new_node);
 }
