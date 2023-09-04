@@ -21,5 +21,9 @@ void error_check(int chk, char *file, int fd);
 void read_and_write(int from, int to, char *file_from, char *file_to);
 int main(int argc, char *argv[]);
 int read_and_write(int from_fd, int to_fd);
+void check_argc(int argc);
+int open_file_from(char *file);
+int open_file_to(char *file);
+void close_files(int fd_from, int fd_to);
 #endif /* MAIN_H */
 
