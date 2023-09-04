@@ -18,7 +18,6 @@ void close_files(int from_fd, int to_fd);
 void copy_content(int from_fd, int to_fd);
 void check_argc(int argc);
 void error_check(int chk, char *file, int fd);
-void read_and_write(int from, int to, char *file_from, char *file_to);
 int main(int argc, char *argv[]);
 int read_and_write(int from_fd, int to_fd);
 void check_argc(int argc);
