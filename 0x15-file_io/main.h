@@ -16,5 +16,7 @@ int main(int argc, char **argv);
 int open_files(char **argv);
 void close_files(int from_fd, int to_fd);
 void copy_content(int from_fd, int to_fd);
+void check_argc(int argc);
+void error_check(int chk, char *file, int fd);
 #endif /* MAIN_H */
 
