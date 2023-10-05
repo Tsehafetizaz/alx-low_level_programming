@@ -22,4 +22,3 @@ int open_file_from(char *file);
 int open_file_to(char *file);
 void close_files(int fd_from, int fd_to);
 #endif /* MAIN_H */
-
