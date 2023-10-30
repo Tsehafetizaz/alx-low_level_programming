@@ -1,4 +1,4 @@
-nclude "main.h"
+#include "main.h"
 
 /**
  * close_file - closes a file descriptor
