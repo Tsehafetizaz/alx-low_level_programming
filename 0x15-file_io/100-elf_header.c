@@ -15,6 +15,7 @@
 void print_magic(unsigned char *e_ident)
 {
 	int i;  /* Loop counter */
+
 	printf("  Magic:   ");
 	for (i = 0; i < EI_NIDENT; i++)
 	{
