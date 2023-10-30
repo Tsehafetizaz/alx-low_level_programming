@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include "elfheader.h"
 
 /**
  * print_magic - Print the magic numbers of the ELF header
