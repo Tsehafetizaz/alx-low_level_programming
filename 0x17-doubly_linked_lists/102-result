@@ -1,0 +1,11 @@
+# Saving the result to a file named '102-result'
+
+result = str(largest_palindrome)
+
+# Writing the result to a file
+with open('/mnt/data/102-result', 'w') as file:
+    file.write(result)
+
+# Providing the path to the saved file
+file_path = '/mnt/data/102-result'
+file_path
