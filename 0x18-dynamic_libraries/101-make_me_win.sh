@@ -1,2 +1,2 @@
-ln -s /dev/null gm
-./gm 9 8 10 24 75 9
+numbers=$(shuf -i 1-75 -n 5)
+bonus=$(shuf -i 1-15 -n 1)
