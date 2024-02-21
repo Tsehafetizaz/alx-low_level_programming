@@ -1,0 +1,11 @@
+# Makefile
+
+# Define the compiler
+CC = gcc
+
+# Define the name of the executable
+TARGET = school
+
+# Define the all rule
+all:
+	$(CC) main.c school.c -o $(TARGET)
