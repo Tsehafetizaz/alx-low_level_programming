@@ -1,47 +1,38 @@
-# Makefile
+# Compiler and Remove Command
+CC := gcc
+RM := rm -f
 
-# Compiler
-CC = gcc
+# Compiler Flags
+CFLAGS := -Wall -Werror -Wextra -pedantic
 
-# Compiler flags
-CFLAGS = -Wall -Werror -Wextra -pedantic
+# Name of the executable
+NAME := school
 
-# Source files
-SRC = $(wildcard *.c)
-
-# Object files (derived from SRC)
-OBJ = $(SRC:.c=.o)
-
-# Executable name
-NAME = school
-
-# Program to delete files
-RM = rm -f
+# Source and Object files
+SRC := $(wildcard *.c)
+OBJ := $(SRC:.c=.o)
 
 # Default rule
 all: $(NAME)
 
-# Link object files into the executable
+# Linking
 $(NAME): $(OBJ)
-	$(CC) $^ -o $@ $(CFLAGS)
+	$(CC) $(OBJ) -o $(NAME)
 
-# Compile source files into object files
+# Compiling
 %.o: %.c
-	$(CC) -c $< -o $@ $(CFLAGS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-# Delete Emacs and Vim temporary files, and the executable
+# Cleaning rules
 clean:
-	$(RM) *~ $(NAME)
+	$(RM) *~ *# $(NAME)
 
-# Delete the object files
 oclean:
 	$(RM) $(OBJ)
 
-# Delete Emacs and Vim temporary files, the executable, and the object files
 fclean: clean oclean
 
-# Force recompilation of all source files
 re: fclean all
 
-# Prevent make from interpreting 'clean', 'oclean', 'fclean', and 're' as file names
-.PHONY: all clean oclean fclean re
+# Prevent make from processing filenames with the same name as rules
+.PHONY: all clean fclean oclean re
