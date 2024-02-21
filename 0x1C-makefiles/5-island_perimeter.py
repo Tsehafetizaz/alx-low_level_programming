@@ -6,10 +6,10 @@ The island is represented in a grid, where 0 represents a water zone and
 the grid is surrounded by water.
 """
 
+
 def island_perimeter(grid):
     """
     Returns the perimeter of the island described in grid.
-    
     :param grid: List of lists of integers where 1 represents land and 0 water
     :return: The perimeter of the island
     """
