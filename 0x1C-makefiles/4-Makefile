@@ -1,38 +1,44 @@
-# Compiler and Remove Command
-CC := gcc
-RM := rm -f
+# Project Makefile for compiling the 'school' executable
+#
+# Usage:
+#   make        - Compiles the executable named 'school'
+#   make clean  - Removes Emacs/Vim temporary files and the executable
+#   make oclean - Removes object files
+#   make fclean - Performs a full clean, removing temporary files, object files, and the executable
+#   make re     - Rebuilds the entire project from scratch
 
-# Compiler Flags
-CFLAGS := -Wall -Werror -Wextra -pedantic
+# Compiler settings
+CC ?= gcc  # The compiler to use, defaulting to gcc. Override with `make CC=your_compiler`
+CFLAGS += -Wall -Werror -Wextra -pedantic  # Compiler flags
 
-# Name of the executable
-NAME := school
+# Source and object file management
+SRC := $(wildcard *.c)  # Automatically detect all C source files in the directory
+OBJ := $(SRC:.c=.o)  # List of object files corresponding to source files
+DEP := $(OBJ:.o=.d)  # Dependency files for each object file
 
-# Source and Object files
-SRC := $(wildcard *.c)
-OBJ := $(SRC:.c=.o)
-
-# Default rule
+# Main target
 all: $(NAME)
 
-# Linking
+# Linking the executable
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $@  # Link object files to create the executable
 
-# Compiling
+# Including dependencies
+-include $(DEP)
+
+# Pattern rule for object files
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -MMD -c $< -o $@  # Compile source files and generate dependencies
 
-# Cleaning rules
+# Clean-up rules
 clean:
-	$(RM) *~ *# $(NAME)
+	$(RM) *~ *# $(NAME)  # Remove editor backups and the executable
 
 oclean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(DEP)  # Remove object and dependency files
 
-fclean: clean oclean
+fclean: clean oclean  # Full clean
 
-re: fclean all
+re: fclean all  # Rebuild the project from scratch
 
-# Prevent make from processing filenames with the same name as rules
-.PHONY: all clean fclean oclean re
+.PHONY: all clean oclean fclean re  # Marking phony targets
