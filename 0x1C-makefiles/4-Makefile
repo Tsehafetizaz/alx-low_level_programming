@@ -1,0 +1,47 @@
+# Makefile
+
+# Compiler
+CC = gcc
+
+# Compiler flags
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Source files
+SRC = $(wildcard *.c)
+
+# Object files (derived from SRC)
+OBJ = $(SRC:.c=.o)
+
+# Executable name
+NAME = school
+
+# Program to delete files
+RM = rm -f
+
+# Default rule
+all: $(NAME)
+
+# Link object files into the executable
+$(NAME): $(OBJ)
+	$(CC) $^ -o $@ $(CFLAGS)
+
+# Compile source files into object files
+%.o: %.c
+	$(CC) -c $< -o $@ $(CFLAGS)
+
+# Delete Emacs and Vim temporary files, and the executable
+clean:
+	$(RM) *~ $(NAME)
+
+# Delete the object files
+oclean:
+	$(RM) $(OBJ)
+
+# Delete Emacs and Vim temporary files, the executable, and the object files
+fclean: clean oclean
+
+# Force recompilation of all source files
+re: fclean all
+
+# Prevent make from interpreting 'clean', 'oclean', 'fclean', and 're' as file names
+.PHONY: all clean oclean fclean re

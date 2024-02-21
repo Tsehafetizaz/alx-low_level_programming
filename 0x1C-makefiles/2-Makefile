@@ -1,0 +1,31 @@
+# Makefile
+
+# Compiler
+CC = gcc
+
+# Source files
+SRC = main.c school.c
+
+# Object files
+OBJ = $(SRC:.c=.o)
+
+# Executable name
+NAME = school
+
+# The all rule - default target
+all: $(NAME)
+
+# Rule to link the program
+$(NAME): $(OBJ)
+	$(CC) $^ -o $@
+
+# Rule to compile source files into object files
+%.o: %.c
+	$(CC) -c $< -o $@
+
+# Clean rule to remove object files and the executable
+clean:
+	rm -f $(OBJ) $(NAME)
+
+# Rule to force recompilation
+re: clean all
